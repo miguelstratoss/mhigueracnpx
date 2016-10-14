@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails rails-coding-test-master: development" uuid="b5c345b7-7d9f-49be-a608-3f1b9cd1e013">
+      <user-name>mhiguera</user-name>
+      <user-password>dfcbdfc8dfcfdfc0dfcbdfc7dfcbdfd3dfcb</user-password>
+      <schema-pattern>mhiguera_cinte_development.pg_catalog mhiguera_cinte_development.public</schema-pattern>
+      <default-schemas>mhiguera_cinte_development.public</default-schemas>
+    </data-source>
+    <data-source name="Rails rails-coding-test-master: test" uuid="e4213883-deb4-4bb7-8e56-84934d60f7c5" />
+    <data-source name="Rails rails-coding-test-master: production" uuid="a71c5ba6-7ab3-4ba7-88e1-8cd3b03149a3">
+      <user-name>mhiguera</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe7dfe2dfe3dfeddfffdfefdff8dfebdff5dfe9dfe3dfe4dffedfefdff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,23 @@
+<h1>My Trips</h1>
+<% unless !@trips %>
+    <table class="table table-hover table-striped">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Init Date</th>
+        <th>End Date</th>
+        <th>Actions</th>
+      </tr>
+      <% @trips.each do |trip| %>
+          <tr>
+            <td><%= trip.id %></td>
+            <td><%= trip.name %></td>
+            <td><%= trip.description %></td>
+            <td><%= trip.init_date %></td>
+            <td><%= trip.end_date %></td>
+            <td><%= link_to "View", trips_show_path(trip),  class: 'btn btn-primary btn-xs' %> </td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>

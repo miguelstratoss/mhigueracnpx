@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Rails Code Test">
+  <meta name="author" content="Miguel Higuera">
+
+  <title>Miguel Higuera - RailsCodingTest</title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'bootstrap'%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!-- Static navbar -->
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"></button>
+      <a class="navbar-brand" href="<%#= root_path %>">Miguel Higuera Test</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><%#= link_to 'My Orders', orders_index_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+            <li><a> Logged in as <strong><%= current_user.email %></strong></a> </li>
+            <li><%= link_to 'Edit profile', edit_user_registration_path %> </li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+            <li><%= link_to 'Sign up', new_user_registration_path  %></li>
+            <li><%= link_to 'Login', new_user_session_path  %></li>
+        <% end %>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<div class="container">
+<% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+
+<%= yield %>
+
+</div>
+</body>
+
+<%= javascript_include_tag 'bootstrap'%>
+<%= javascript_include_tag 'bootstrap.min'%>
+
+</html>

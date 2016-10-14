@@ -1,0 +1,33 @@
+<h1>Trip Description</h1>
+<table class="table table-hover table-striped">
+  <tr>
+    <th>Id</th><td><%= @trip.id %></td> </tr>
+  <th>Name</th><td><%= @trip.name %></td> </tr>
+  <th>Description</th><td><%= @trip.description %></td> </tr>
+  <th>Init Date</th><td><%= @trip.init_date %></td> </tr>
+  <th>End Date</th><td><%= @trip.end_date %></td> </tr>
+  <th>Created At</th><td><%= @trip.created_at %></td> </tr>
+  <th colspan="2"><a class="btn btn-default" href="javascript:history.back()" role="button">< Back</a>
+    <%= link_to "Add Expense", new_expense_path(@trip),  class: 'btn btn-primary' %> </th>
+  </tr>
+</table>
+
+<hr/>
+
+<h2>Trip Expenses</h2>
+<table class="table table-hover table-striped">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Value</th>
+    <th>Created At</th>
+  </tr>
+  <% @expenses.each do |expense| %>
+      <tr>
+        <td><%= expense.id %></td>
+        <td><%= expense.name %></td>
+        <td><%= expense.value %></td>
+        <td><%= expense.created_at %></td>
+      </tr>
+  <% end %>
+</table>
