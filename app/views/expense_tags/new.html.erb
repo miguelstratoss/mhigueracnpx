@@ -1,0 +1,21 @@
+<h1>New Tag to Expense: <b><%= @expense.name %></b></h1>
+<hr/>
+<br>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <div class = 'form-group'>
+      <%= form_tag  :method => 'post', :action => 'create' do %>
+          Name:
+          <%= select_tag "tag_id", options_from_collection_for_select(@tags, "id", "name"), {:class => "form-control"} %>
+          Value:
+          <%= hidden_field_tag :trip_id, @expense.trip_id %>
+          <%= hidden_field_tag :expense_id, @expense_id %>
+          <br/>
+          <th colspan="2"><a class="btn btn-default" href="javascript:history.back()" role="button">< Back</a>
+            <%= submit_tag("Save", :class => "btn btn-primary text-center") %>
+      <% end %>
+    </div>
+  </div><!-- /.col-lg-6 -->
+
+</div><!-- /.row -->
+<hr/>
