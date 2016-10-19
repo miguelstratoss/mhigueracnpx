@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
 
+  get 'expense_tags/new'
+  post 'expense_tags/create'
   get 'trips/index'
   get 'trips/show'
   get 'trips/new'
+  get 'expenses/new'
+  post 'expenses/create'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
 
-  resources :expenses, :only => [:new, :create]
+  resources :expenses do
+  end
+
+  resources :expense_tags do
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -9,7 +9,4 @@ class TripsController < ApplicationController
     @expenses = Expense.where(:trip_id => trip_id)
   end
 
-  def new
-
-  end
 end

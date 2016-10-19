@@ -1,9 +1,21 @@
-<h1>New Expense</h1>
+<h1>New Expense to Trip: <b><%= @trip.name %></b></h1>
+<hr/>
+<br>
 <div class="row">
-  <div class="col-lg-8 col-lg-offset-2">
-    <%= form_for @expense, :method => 'post', :class => "form-inline form-group-lg text-center" do %>
-        <%= submit_tag("Guardar", :class => "btn btn-primary") %>
+  <div class="col-lg-6 col-lg-offset-3">
+    <div class = 'form-group'>
+    <%= form_tag  :method => 'post', :action => 'create', :class => "form-control" do %>
+        Name:
+        <%= text_field_tag :name, nil, :placeholder => "Name", :class => 'form-control' %>
+        Value:
+        <%= number_field_tag :value, nil, :placeholder => "Value", :class => 'form-control' %>
+        <%= hidden_field_tag :trip_id, @trip_id %>
+          <br/>
+        <th colspan="2"><a class="btn btn-default" href="javascript:history.back()" role="button">< Back</a>
+        <%= submit_tag("Save", :class => "btn btn-primary text-center") %>
     <% end %>
+    </div>
   </div><!-- /.col-lg-6 -->
 
 </div><!-- /.row -->
+<hr/>

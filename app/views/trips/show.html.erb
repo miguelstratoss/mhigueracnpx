@@ -21,6 +21,7 @@
     <th>Name</th>
     <th>Value</th>
     <th>Created At</th>
+    <th>Tags</th>
   </tr>
   <% @expenses.each do |expense| %>
       <tr>
@@ -28,6 +29,12 @@
         <td><%= expense.name %></td>
         <td><%= expense.value %></td>
         <td><%= expense.created_at %></td>
+        <td>
+          <% expense.expense_tags.each do |expense_tag|%>
+            <%= expense_tag.tag.name %>,
+          <% end %>
+          <%= link_to "Add Tag", expense_tags_new_path(expense.id),  class: 'btn btn-primary' %> </th>
+        </td>
       </tr>
   <% end %>
 </table>
