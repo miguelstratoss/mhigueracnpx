@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'trips/show'
   get 'trips/new'
   get 'expenses/new'
+  get 'expenses/show'
+  get 'expenses/index'
   post 'expenses/create'
 
   devise_for :admin_users, ActiveAdmin::Devise.config

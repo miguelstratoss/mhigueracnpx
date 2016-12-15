@@ -14,4 +14,17 @@ class ExpensesController < ApplicationController
       redirect_to trips_show_path(params[:trip_id])
     end
   end
+
+  #### Some Services ###
+
+  def show
+    expense = Expense.find(params[:id])
+    render json: { :id => expense.id, :name => expense.name, :created_at => expense.created_at }.to_json
+  end
+
+  def index
+    expenses = Expense.all
+    render json: expenses.to_json
+  end
+
 end
